@@ -7,8 +7,8 @@
     <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
             <h5 class="text-white h4">Menu</h5>
-            <a class="btn btn-secondary d-block mb-3" href="#">Transportes</a>
-            <a class="btn btn-secondary d-block mb-3" href="#">Camiones</a>
+            <a class="btn btn-secondary d-block mb-3" href="{{route("transporte.index")}}">Transportes</a>
+            <a class="btn btn-secondary d-block mb-3" href="{{route("camion.index")}}">Camiones</a>
             <a class="btn btn-secondary d-block mb-3" href="/">Personas</a>
         </div>
     </div>

@@ -12,7 +12,7 @@ class TransporteController extends Controller
      */
     public function index()
     {
-        $transportes = Transporte::all();
+        $transportes = Transporte::orderBy('id', 'desc')->paginate(3);
         return view('transporte.listaT', compact('transportes'));
     }
 
@@ -21,7 +21,7 @@ class TransporteController extends Controller
      */
     public function create()
     {
-        //
+        return view('transporte/agregarT');
     }
 
     /**
@@ -29,7 +29,13 @@ class TransporteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $transportes = new Transporte();
+        $transportes->id = $request->post('id');
+        $transportes->nombre = $request->post('nombre');
+        $transportes->razon_social = $request->post('razon');
+        $transportes->save();
+
+        return redirect()->route("transporte.index")->with("success", "Agregado con exito!");
     }
 
     /**

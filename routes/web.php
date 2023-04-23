@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/inicio', [\App\Http\Controllers\Controller::class, 'index'])->name('inicio.index');
+
+/*Persona*/
 
 Route::get('/', [\App\Http\Controllers\PersonaController::class, 'index'])->name('persona.index');
 Route::get('/create', [\App\Http\Controllers\PersonaController::class, 'create'])->name('persona.create');
@@ -22,7 +25,16 @@ Route::put('/update/{id}', [\App\Http\Controllers\PersonaController::class, 'upd
 Route::get('/show/{id}', [\App\Http\Controllers\PersonaController::class, 'show'])->name('persona.show');
 Route::delete('destroy/{id}', [\App\Http\Controllers\PersonaController::class, 'destroy'])->name('persona.destroy');
 
-Route::get('/listaT', [\App\Http\Controllers\TransporteController::class, 'index'])->name('transporte.index');
-Route::get('/listaC', [\App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
+/*Transporte*/
 
-Route::get('/inicio', [\App\Http\Controllers\Controller::class, 'index'])->name('inicio');
+Route::get('/listaT', [\App\Http\Controllers\TransporteController::class, 'index'])->name('transporte.index');
+Route::get('/create', [\App\Http\Controllers\TransporteController::class, 'create'])->name('transporte.create');
+
+Route::post('/agregarT', [\App\Http\Controllers\TransporteController::class, 'store'])->name('transporte.store');
+
+
+
+
+/*Camion*/
+
+Route::get('/listaC', [\App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');

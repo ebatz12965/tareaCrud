@@ -1,15 +1,79 @@
-<h1>Lista de Transportes</h1>
-<table border="1">
-    <tr>
-        <td>ID</td>
-        <td>Nombre</td>
-        <td>Razon Social</td>
-    </tr>
-    @foreach($transportes as $item)
-        <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->nombre}}</td>
-            <td>{{$item->razon_social}}</td>
-        </tr>
-    @endforeach
-</table>
+@extends('layout/plantilla')
+
+@section('tituloPagina', 'Crud con Laravel 8')
+
+@section('contenido')
+
+    <div class="card">
+        <h5 class="card-header">CRUD con Laravel 8 y MySQL</h5>
+        <div class="card-body">
+            <div>
+                <div class="col-sm-12">
+                    @if($mensaje = Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ $mensaje }}
+                        </div>
+                    @endif
+
+                </div>
+            </div>
+            <h5 class="card-title text-center">Listado de Transportes en el Sistema</h5>
+            <p>
+                <a href="{{route("transporte.create")}}" class="btn btn-primary">
+                    <span class="fas fa-user-plus"></span> Agregar nuevo transporte
+                </a>
+            </p>
+            <hr>
+            <p class="card-text">
+            <div class="table table-responsive">
+                <table class="table table-sm table-border">
+                    <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Razón Social</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                    </thead>
+                    <tbody>
+                    @foreach($transportes as $item)
+                        <tr>
+                            <td>{{$item->id}}</td>
+                            <td>{{$item->nombre}}</td>
+                            <td>{{$item->razon_social}}</td>
+                            <td>
+                                <form action="#" method="GET">
+                                    <button class="btn btn-warning btn-sm">
+                                        <span class="fas fa-user-edit"></span>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="#" method="GET">
+                                    <button class="btn btn-danger btn-sm">
+                                        <span class="fas fa-user-times"></span>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <hr>
+            </div>
+           <div class="row">
+                <div class="col-sm-12">
+                    {{ $transportes->links() }}
+                </div>
+            </div>
+            </p>
+
+        </div>
+    </div>
+    <a href="{{route("inicio.index")}}" class="btn btn-info">
+        <span class="fas fa-undo-alt"></span> Regresar
+    </a>
+
+@endsection
+
+
+

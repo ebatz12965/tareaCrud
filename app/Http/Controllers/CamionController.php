@@ -12,8 +12,8 @@ class CamionController extends Controller
      */
     public function index()
     {
-        $camions = Camion::all();
-        return view('camion.list', compact('camions'));
+        $camions = Camion::orderBy('id', 'desc')->paginate(3);
+        return view('camion.listaC', compact('camions'));
     }
 
     /**

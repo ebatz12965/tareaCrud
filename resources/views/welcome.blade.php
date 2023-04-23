@@ -22,8 +22,6 @@
                 <a href="{{route("persona.create")}}" class="btn btn-primary">
                     <span class="fas fa-user-plus"></span> Agregar nueva persona
                 </a>
-                <a href="{{route("transporte.index")}}" class="btn btn-primary">
-                    <span class="fas fa-user-plus"></span> Agregar nueva persona
                 </a>
             </p>
             <hr>
@@ -75,5 +73,8 @@
 
         </div>
     </div>
+    <a href="{{route("inicio.index")}}" class="btn btn-info">
+        <span class="fas fa-undo-alt"></span> Regresar
+    </a>
 
 @endsection
