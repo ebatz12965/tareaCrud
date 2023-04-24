@@ -28,9 +28,12 @@ Route::delete('destroy/{id}', [\App\Http\Controllers\PersonaController::class, '
 /*Transporte*/
 
 Route::get('/listaT', [\App\Http\Controllers\TransporteController::class, 'index'])->name('transporte.index');
-Route::get('/create', [\App\Http\Controllers\TransporteController::class, 'create'])->name('transporte.create');
-
-Route::post('/agregarT', [\App\Http\Controllers\TransporteController::class, 'store'])->name('transporte.store');
+Route::get('/createT', [\App\Http\Controllers\TransporteController::class, 'create'])->name('transporte.create');
+Route::post('/storeT', [\App\Http\Controllers\TransporteController::class, 'store'])->name('transporte.store');
+Route::get('/editT/{id}', [\App\Http\Controllers\TransporteController::class, 'edit'])->name('transporte.edit');
+Route::put('/updateT/{id}', [\App\Http\Controllers\TransporteController::class, 'update'])->name('transporte.update');
+Route::get('/showT/{id}', [\App\Http\Controllers\TransporteController::class, 'show'])->name('transporte.show');
+Route::delete('destroyT/{id}', [\App\Http\Controllers\TransporteController::class, 'destroy'])->name('transporte.destroy');
 
 
 
@@ -38,3 +41,9 @@ Route::post('/agregarT', [\App\Http\Controllers\TransporteController::class, 'st
 /*Camion*/
 
 Route::get('/listaC', [\App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
+Route::get('/createC', [\App\Http\Controllers\CamionController::class, 'create'])->name('camion.create');
+Route::post('/storeC', [\App\Http\Controllers\CamionController::class, 'store'])->name('camion.store');
+Route::get('/editC/{id}', [\App\Http\Controllers\CamionController::class, 'edit'])->name('camion.edit');
+Route::put('/updateC/{id}', [\App\Http\Controllers\CamionController::class, 'update'])->name('camion.update');
+Route::get('/showC/{id}', [\App\Http\Controllers\CamionController::class, 'show'])->name('camion.show');
+Route::delete('destroyC/{id}', [\App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');

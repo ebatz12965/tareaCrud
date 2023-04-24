@@ -19,9 +19,8 @@
             </div>
             <h5 class="card-title text-center">Listado de personas en el Sistema</h5>
             <p>
-                <a href="{{route("persona.create")}}" class="btn btn-primary">
+                <a href="{{ route("persona.create")}}" class="btn btn-primary">
                     <span class="fas fa-user-plus"></span> Agregar nueva persona
-                </a>
                 </a>
             </p>
             <hr>

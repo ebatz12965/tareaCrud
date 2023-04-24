@@ -4,23 +4,21 @@
 
 @section('contenido')
     <div class="card">
-        <h5 class="card-header">Actualizar nueva persona</h5>
+        <h5 class="card-header">Actualizar nuevo transporte</h5>
         <div class="card-body">
 
             <p class="card-text">
-            <form action="{{route('persona.update', $personas->id)}}" method="POST">
+            <form action="{{route('transporte.update', $transportes->id)}}" method="POST">
                 @csrf
                 @method("PUT")
-                <label for="">Apellido paterno</label>
-                <input type="text" name="paterno" class="form-control" required value="{{$personas->paterno}}">
-                <label for="">Apellido materno</label>
-                <input type="text" name="materno" class="form-control" required value="{{$personas->materno}}">
+                <label for="">ID</label>
+                <input type="text" name="id" class="form-control" required value="{{$transportes->id}}">
                 <label for="">Nombre</label>
-                <input type="text" name="nombre" class="form-control" required value="{{$personas->nombre}}">
-                <label for="">Fecha de nacimiento</label>
-                <input type="date" name="fecha_nacimiento" class="form-control" required value="{{$personas->fecha_nacimiento}}">
+                <input type="text" name="nombre" class="form-control" required value="{{$transportes->nombre}}">
+                <label for="">Razón Social</label>
+                <input type="text" name="razon_social" class="form-control" required{{$transportes->razon_social}}>
                 <br>
-                <a href="{{route("persona.index")}}" class="btn btn-info">
+                <a href="{{route("transporte.index")}}" class="btn btn-info">
                     <span class="fas fa-undo-alt"></span> Regresar
                 </a>
                 <button class="btn btn-warning">

@@ -21,7 +21,7 @@ class TransporteController extends Controller
      */
     public function create()
     {
-        return view('transporte/agregarT');
+        return view('transporte.agregarT');
     }
 
     /**
@@ -32,7 +32,7 @@ class TransporteController extends Controller
         $transportes = new Transporte();
         $transportes->id = $request->post('id');
         $transportes->nombre = $request->post('nombre');
-        $transportes->razon_social = $request->post('razon');
+        $transportes->razon_social = $request->post('razon_social');
         $transportes->save();
 
         return redirect()->route("transporte.index")->with("success", "Agregado con exito!");
@@ -41,25 +41,37 @@ class TransporteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         //
+        $transportes = Transporte::find($id);
+        return view('transporte.eliminarT', compact('transportes'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
+        $transportes = Transporte::find($id);
+        return view("transporte.actualizarT", compact('transportes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         //
+        $transportes = Transporte::find($id);
+        $transportes->id = $request->post('id');
+        $transportes->nombre = $request->post('nombre');
+        $transportes->razon_social = $request->post('razon_social');
+        $transportes->save();
+
+        return redirect()->route("transporte.index")->with("success", "Actualizado con exito!");
+
     }
 
     /**
@@ -68,5 +80,8 @@ class TransporteController extends Controller
     public function destroy(string $id)
     {
         //
+        $transportes = Transporte::find($id);
+        $transportes->delete();
+        return redirect()->route("transporte.index")->with("success", "Eliminado con Exito!!");
     }
 }

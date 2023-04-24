@@ -8,13 +8,13 @@
         <div class="card-body">
 
             <p class="card-text">
-            <form action="{{route('transporte.store')}}" method="POST">
+            <form action="{{ route('transporte.store')}}" method="POST">
                 @csrf
                 <label for="">ID</label>
                 <input type="text" name="id" class="form-control" required>
                 <label for="">Nombre</label>
                 <input type="text" name="nombre" class="form-control" required>
-                <label for="">Razón Social </label>
+                <label for="">Razón Social</label>
                 <input type="text" name="razon_social" class="form-control" required>
                 <br>
                 <a href="{{route("transporte.index")}}" class="btn btn-info">

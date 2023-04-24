@@ -19,7 +19,7 @@
             </div>
             <h5 class="card-title text-center">Listado de Camiones en el Sistema</h5>
             <p>
-                <a href="{route("camions.index")}}" class="btn btn-primary">
+                <a href="{{route("camion.create")}}" class="btn btn-primary">
                 <span class="fas fa-user-plus"></span> Agregar nuevo camión
                 </a>
             </p>
@@ -49,14 +49,14 @@
                             <td>{{$item->capacidad_toneladas}}</td>
                             <td>{{$item->transporte_id}}</td>
                             <td>
-                                <form action="#" method="GET">
+                                <form action="{{route("camion.edit", $item->id)}}" method="GET">
                                     <button class="btn btn-warning btn-sm">
                                         <span class="fas fa-user-edit"></span>
                                     </button>
                                 </form>
                             </td>
                             <td>
-                                <form action="#" method="GET">
+                                <form action="{{route("camion.show", $item->id)}}" method="GET">
                                     <button class="btn btn-danger btn-sm">
                                         <span class="fas fa-user-times"></span>
                                     </button>

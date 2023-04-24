@@ -19,7 +19,7 @@
             </div>
             <h5 class="card-title text-center">Listado de Transportes en el Sistema</h5>
             <p>
-                <a href="{{route("transporte.create")}}" class="btn btn-primary">
+                <a href="{{ route("transporte.create")}}" class="btn btn-primary">
                     <span class="fas fa-user-plus"></span> Agregar nuevo transporte
                 </a>
             </p>
@@ -30,7 +30,7 @@
                     <thead>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Razón Social</th>
+                    <th>Razon Social</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                     </thead>
@@ -41,14 +41,14 @@
                             <td>{{$item->nombre}}</td>
                             <td>{{$item->razon_social}}</td>
                             <td>
-                                <form action="#" method="GET">
+                                <form action="{{route("transporte.edit", $item->id)}}" method="GET">
                                     <button class="btn btn-warning btn-sm">
                                         <span class="fas fa-user-edit"></span>
                                     </button>
                                 </form>
                             </td>
                             <td>
-                                <form action="#" method="GET">
+                                <form action="{{route("transporte.show", $item->id)}}" method="GET">
                                     <button class="btn btn-danger btn-sm">
                                         <span class="fas fa-user-times"></span>
                                     </button>
