@@ -3,6 +3,7 @@
 @section("tituloPagina", "Crear un nuevo registro")
 
 @section('contenido')
+
     <div class="card">
         <h5 class="card-header">Agregar nuevo camion</h5>
         <div class="card-body">
@@ -24,6 +25,9 @@
                 <input type="text" name="capacidad_toneladas" class="form-control" required>
                 <label for="">Transporte ID</label>
                 <input type="text" name="transporte_id" class="form-control" required>
+                <!--<label for="">Transporte ID</label>
+                { Form::select('transporte_id', $transportes, null, ['class' => 'form-control', 'placeholder' => 'Seleccione un transporte']) }}-->
+
                 <br>
                 <a href="{{route("camion.index")}}" class="btn btn-info">
                     <span class="fas fa-undo-alt"></span> Regresar

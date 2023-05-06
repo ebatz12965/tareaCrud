@@ -9,7 +9,7 @@
             <h5 class="text-white h4">Menu</h5>
             <a class="btn btn-secondary d-block mb-3" href="{{route("transporte.index")}}">Transportes</a>
             <a class="btn btn-secondary d-block mb-3" href="{{route("camion.index")}}">Camiones</a>
-            <a class="btn btn-secondary d-block mb-3" href="/">Personas</a>
+            <a class="btn btn-secondary d-block mb-3" href="{{route("persona.index")}}">Personas</a>
         </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">

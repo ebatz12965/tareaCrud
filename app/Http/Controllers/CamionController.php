@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Camion;
 use Illuminate\Http\Request;
 
+
 class CamionController extends Controller
 {
     /**

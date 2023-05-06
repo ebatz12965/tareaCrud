@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/inicio', [\App\Http\Controllers\Controller::class, 'index'])->name('inicio.index');
+Route::get('/', [\App\Http\Controllers\Controller::class, 'index'])->name('inicio.index');
 
 /*Persona*/
 
-Route::get('/', [\App\Http\Controllers\PersonaController::class, 'index'])->name('persona.index');
+Route::get('/welcome', [\App\Http\Controllers\PersonaController::class, 'index'])->name('persona.index');
 Route::get('/create', [\App\Http\Controllers\PersonaController::class, 'create'])->name('persona.create');
 Route::post('/store', [\App\Http\Controllers\PersonaController::class, 'store'])->name('persona.store');
 Route::get('/edit/{id}', [\App\Http\Controllers\PersonaController::class, 'edit'])->name('persona.edit');
