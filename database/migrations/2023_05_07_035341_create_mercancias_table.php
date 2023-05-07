@@ -13,10 +13,19 @@ return new class extends Migration
     {
         Schema::create('mercancias', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo', 6);
             $table->string('nombre', 105);
-            $table->string('id_tipo_mercancia',175);
+            $table->unsignedBigInteger('id_tipo_mercancia')->unique();
+            //$table->primary('id_tipo_mercancia');
             $table->timestamps();
-        });
+
+            $table->foreign('id_tipo_mercancia')
+                ->references('id')
+                ->on('tipo_mercancias')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            });
+
     }
 
     /**

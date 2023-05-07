@@ -47,3 +47,18 @@ Route::get('/editC/{id}', [\App\Http\Controllers\CamionController::class, 'edit'
 Route::put('/updateC/{id}', [\App\Http\Controllers\CamionController::class, 'update'])->name('camion.update');
 Route::get('/showC/{id}', [\App\Http\Controllers\CamionController::class, 'show'])->name('camion.show');
 Route::delete('destroyC/{id}', [\App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');
+
+
+/*Predios*/
+Route::get('/listaP', [\App\Http\Controllers\ControllerPredio::class, 'index'])->name('predio.index');
+Route::get('/createP', [\App\Http\Controllers\ControllerPredio::class, 'create'])->name('predio.create');
+
+Route::get('/editP/{id}', [\App\Http\Controllers\ControllerPredio::class, 'edit'])->name('predio.edit');
+
+Route::get('/showP/{id}', [\App\Http\Controllers\ControllerPredio::class, 'show'])->name('predio.show');
+
+
+/*Mercancias*/
+
+
+/*Tipo Mercancias*/
